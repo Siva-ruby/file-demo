@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <h2>File List</h2>
+
+  <div class="row">
+    <div class="col-md-4">
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th>File Name</th>
+            <th class="text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of fileList; index as i">
+            <td>{{item.name}}</td>
+            <td class="text-center"><a href="javascript:void()" (click)="viewFile(i)"><i class="fa fa-cloud-download"></i></a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-md-8 border">
+      <!-- <iframe [src]="docSrc" frameborder="0" *ngIf="docview"></iframe> -->
+      <!-- <app-docviewer></app-docviewer> -->
+      <!-- <ngx-doc-viewer [url]="docSrc" viewer="google" style="width:100%;height:50vh;"></ngx-doc-viewer> -->
+      <ngx-doc-viewer [url]="DemoDoc" viewer="google" style="width:100%;height:85vh;"></ngx-doc-viewer>
+    </div>
+  </div>
+</div>
